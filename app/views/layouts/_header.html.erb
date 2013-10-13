@@ -1,0 +1,21 @@
+<header  align="center">
+      	<%= link_to "ЖК 40", root_path, id: "logo" %>
+         	<nav>
+         		<ul>
+         			<li><%= link_to "Домой",    root_path %></li>
+                  <li><%= link_to "Помощь",  help_path %></li>
+                  
+                   <% if signed_in? %>
+				   <% if current_user.role == "ADMIN" %>
+                   	<li><%= link_to "Список пользователей", users_path %></li>
+					<% end %>
+                   	<li><%= link_to "Профиль", current_user %></li>
+                   	<li><%= link_to "Настройки", '#' %></li>
+                   	<li><%= link_to "Выход", signout_path, method: "delete" %></li>
+                   	</ul>
+                   <% else %>
+                   	<li><%= link_to "Вход", signin_path %></li>
+                   <% end %>                  
+               </ul>
+			   </nav>
+       </header>

@@ -1,0 +1,8 @@
+<% provide(:title, @news.topic) %>
+      <h1>
+	    <%= @news.topic%>
+      </h1>
+	  <div class="news_text">
+	  <img src="<%= @news.picture.url %>" class="news_view_picture" alt="<%= @news.topic%>" />      
+		<%= @news.content %>
+	  </div>
