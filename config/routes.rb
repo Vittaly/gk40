@@ -1,5 +1,13 @@
 # -*- encoding : utf-8 -*-
 Gk40::Application.routes.draw do
+  get "ads/new"
+
+  get "ads/create"
+
+  get "ads/edit"
+
+  get "ads/update"
+
   get "news/show"
   get "news/create"
   get "news/new"
@@ -16,6 +24,10 @@ Gk40::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :news
+  resources :monthly_readings, only: [:edit, :update]
+  resources :ads 
+  resources :documents
+  resources :apartments, only:[:index] 
   match '/help', to: 'static_pages#help'
   match '/contact', to: 'static_pages#contact'
   match '/about', to: 'static_pages#about'

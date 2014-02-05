@@ -2,7 +2,7 @@
 module SessionsHelper
 	 def sign_in(user)
    session[:current_user_id] = user.id
-   session[:expires_at] ||= 1.minutes.from_now
+   session[:expires_at] = 1.minutes.from_now
     self.current_user = user
   end
   def signed_in?
@@ -14,10 +14,12 @@ module SessionsHelper
 
   def current_user
   	  flash.now[:notice] = session[:expires_at]
-  	  if !session[:expires_at] || session[:expires_at] < Time.now then
-  	  	  session[:expires_at] = nil
+	  debugger
+  	  if (!session[:expires_at]) || session[:expires_at] < Time.now then
+  	  	  sign_out
+		  return nil
   	  else
-  	  	  session[:expires_at] ||= 1.minutes.from_now
+  	  	  session[:expires_at] = 1.minutes.from_now
   	  end  	  	  
   	  @current_user ||= User.find session[:current_user_id] if session[:current_user_id]
   	  return @current_user
@@ -26,6 +28,6 @@ module SessionsHelper
   def sign_out
     self.current_user = nil
     session[:current_user_id] = nil
-    session[:expires_at] = nil
+     session[:expires_at] = nil
   end
 end

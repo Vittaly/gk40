@@ -1,0 +1,8 @@
+<% provide(:title, @ad.title) %>
+      <h1>
+	    <%= @ad.title%>
+      </h1>
+	  <div class="ad_text">
+	  <img src="<%= @ad.picture.url %>" class="ad_view_picture" alt="<%= @ad.title%>" />      
+	  <%= simple_format(@ad.content)%>
+	  </div>

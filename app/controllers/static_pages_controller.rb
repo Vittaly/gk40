@@ -2,6 +2,7 @@
 class StaticPagesController < ApplicationController
   def home
   @news = News.last(3).reverse
+  @ads = Ad.last(3).reverse
   end
 
   def help

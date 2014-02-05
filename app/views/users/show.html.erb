@@ -1,14 +1,17 @@
 <% provide(:title, @user.fio) %>
-<div class="row">
-  <aside class="span4">
-    <section>
+<div >
       <h1>
         <%= fio @user%>
-        <r>
+        <br/>лицевой счет:
         <%= @user.Account %>
-        </r>
+        
         <%= @user.email %>
       </h1>
-    </section>
-  </aside>
+	  <% if @user.apartment != nil then %>
+	  <h2>
+	  <%= apartment_info @user.apartment%>
+	  </h2>
+	  <h3>Показания счетчиков</h3>
+	  <%=render :partial => "counters/monthly_reading", :collection => @monthly_readings%>
+	  <%end%>
 </div>

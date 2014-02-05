@@ -1,0 +1,9 @@
+﻿<% provide(:title, 'Все новости') %>
+<h1>Документы</h1>
+
+<%= will_paginate %>
+<ul>
+  <%= render :partial => "document", :collection => @documents %>
+  
+</ul>
+<%= will_paginate %>

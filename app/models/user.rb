@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
   attr_accessible :Account, :FirstName, :LastName, :MiddleName, :email, :role, :password, :password_confirmation
   has_secure_password
   
+  has_one :apartment
+  
   before_save { |user| user.email = email.downcase unless user.email.nil? }
   before_save { |user| user.role = :USER if user.role.nil? }
   after_initialize :default_values

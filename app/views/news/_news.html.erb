@@ -1,10 +1,10 @@
 <li class="news_item">
 	<div >
 	<h3>
-		<%= one_news.topic%>
+		<%= one_news.title%>
     </h3>	
 	
-	<img src="<%= one_news.picture.url %>" class="news_view_picture" alt="<%= one_news.topic%>" /> 
+<%= image_tag one_news.picture.url(:medium) %> 
 	<p>Добавлено <%= one_news.created_at.to_s(:ru_datetime) %></p>
 	<p><%= one_news.content %></p>
 	</div>

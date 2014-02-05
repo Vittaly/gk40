@@ -1,0 +1,12 @@
+﻿
+ <h4>
+ <%= l monthly_reading.month, format: :meterage_date %>
+ </h4>
+ <table border="1"> 
+	 <caption> <%= l monthly_reading.month, format: :meterage_date %> </caption>
+	 <tr><td>Показатель</td><td>Начало периода</td><td>Конец периода</td></tr>
+<%=render :partial => "counters/meterage", :collection => monthly_reading.meterages%>
+</table>
+<% if !monthly_reading.readonly? then%>
+	<div><h4><%= link_to 'Ввести показания счетчиков', edit_monthly_reading_path(monthly_reading) %></h4></div>
+<%end%>

@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+if RUBY_VERSION =~ /1.9/
+  Encoding.default_external = Encoding::UTF_8
+  Encoding.default_internal = Encoding::UTF_8
+end
+
 gem 'rails', '3.2.13'
 #gem 'bootstrap-sass'
 # Bundle edge Rails instead:
@@ -8,11 +13,15 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'paperclip'
-#gem 'will_paginate'
+gem 'will_paginate'
+gem 'russian', '~> 0.6.0'
+
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'annotate'
+ # gem 'debugger'
+ #gem 'ruby-debug-ide'
 end
 
 

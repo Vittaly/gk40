@@ -1,0 +1,7 @@
+# -*- encoding : utf-8 -*-
+
+ru:
+  app_name_full: "Жилищно-строительный кооператив 40"
+  date:
+    formats:
+      meterage_date: "%Y %B"

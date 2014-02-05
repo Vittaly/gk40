@@ -1,0 +1,17 @@
+<li>
+<%= apartment_info apartment%>
+<% if apartment.user then%>
+	<table border = "1">
+	<tr>
+		<td>Номер лицевого счета</td>
+		<td>
+			<%=apartment.user.Account%>
+		</td>
+	</tr>
+	<tr>
+		<td>ФИО</td>
+		<td><%=fio apartment.user%></td>
+	</tr>
+</table>
+<% end %>
+</li>

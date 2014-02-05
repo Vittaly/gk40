@@ -6,8 +6,10 @@
 width:25%;
 height:25%;
 }
-.short_news, .notices {min-width:15%;
+.short_news, .notices {
+	#min-width:15%;
 max-width:65%;
+width:45%;
 display:inline-block;
 vertical-align:top;
 }

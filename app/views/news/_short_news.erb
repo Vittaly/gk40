@@ -1,5 +1,5 @@
 ﻿<div class="one_short_news">
-<img src="<%= one_news.picture.url %>" class="short_news_picture" alt="<%= one_news.topic%>" />
-<%=link_to one_news.topic, one_news%>
+<%= image_tag one_news.picture.url(:thumb) %>
+<%=link_to one_news.title, one_news%>
 <p><%="Добавлено #{one_news.created_at.to_s(:ru_datetime)}"%></p>
 </div>

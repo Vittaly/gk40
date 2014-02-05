@@ -1,0 +1,13 @@
+<tr>
+	<td>
+		<%= meterage.counter_type.name %>
+	</td>
+	<td>
+		<%=  if meterage.prev then "#{meterage.prev.value}" end%>
+		</td>
+	<td>
+		<%= "#{meterage.value}" %>
+	</td>
+</tr>
+<!--<%# meterage.prev ? "Начало периода: #{meterage.prev.value} Конец периода: #{meterage.value}" : "Конец периода: #{meterage.value}" %>
+<%# "Показатель 2: #{meterage.value2}" if meterage.value2?%>-->
