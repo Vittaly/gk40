@@ -1,25 +1,3 @@
-<% if @user && @user.errors.any? %>
-    <div id="error_explanation">
-      <div class="alert alert-error">
-        The form contains <%= pluralize(@user.errors.count, "error") %>.
-      </div>
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-            <li>* <%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-<% end %>
-
-<% if @news && @news.errors.any? %>
-    <div id="error_explanation">
-      <div class="alert alert-error">
-        The form contains <%= pluralize(@news.errors.count, "error") %>.
-      </div>
-      <ul>
-        <% @news.errors.full_messages.each do |msg| %>
-            <li>* <%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-<% end %>
+<% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+<% end -%>

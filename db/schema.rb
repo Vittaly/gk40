@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140103120545) do
+ActiveRecord::Schema.define(:version => 20140205202308) do
 
   create_table "ads", :force => true do |t|
     t.string   "title"
@@ -58,13 +58,13 @@ ActiveRecord::Schema.define(:version => 20140103120545) do
 
   create_table "documents", :force => true do |t|
     t.string   "title"
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.integer  "picture_file_size"
-    t.datetime "picture_updated_at"
+    t.string   "doc_file_name"
+    t.string   "doc_content_type"
+    t.integer  "doc_file_size"
+    t.datetime "doc_updated_at"
     t.integer  "user_id"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   add_index "documents", ["title"], :name => "index_documents_on_title", :unique => true

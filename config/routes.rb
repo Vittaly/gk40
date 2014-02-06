@@ -1,31 +1,28 @@
 # -*- encoding : utf-8 -*-
 Gk40::Application.routes.draw do
-  get "ads/new"
 
-  get "ads/create"
 
-  get "ads/edit"
 
-  get "ads/update"
-
-  get "news/show"
-  get "news/create"
-  get "news/new"
-  get "news/edit"
-  get "news/destroy"
   
   get "users/index"
   get "users/show"
   get "users/new"
   get "users/edit"
   get "users/update"
-  get "users/destroy"
+  #get "users/destroy"
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :news
+  get "news/show"
+  get "news/create"
+  get "news/new"
+  get "news/edit"
+  #get "news/destroy"
+  
   resources :monthly_readings, only: [:edit, :update]
-  resources :ads 
+  resources :ads, only:[:new, :create, :edit, :update, :show, :index] 
+  get "documents/:id/download", to: "documents#download", as: :document_download
   resources :documents
   resources :apartments, only:[:index] 
   match '/help', to: 'static_pages#help'

@@ -1,20 +1,17 @@
-<% provide(:title, 'Создание новости') %>
-<h1>Новость...</h1>
+<% provide(:title, 'Добавление документа') %>
+<h1>Новый документ</h1>
 
 <div class="row">
   <div>
-    <%= form_for(@news) do |f| %>
+    <%= form_for(@document) do |f| %>
 
         <%= render 'shared/error_messages' %>
 
         <%= f.label :title, 'Заголовок' %>
         <%= f.text_field :title %><br/>
 
-        <%= f.label :content, 'Содержание' %>
-        <%= f.text_area :content %><br/>
-
-        <%= f.label :picture,'Фото' %>
-        <%= f.file_field :picture %><br/>
+        <%= f.label :doc,'Документ' %>
+        <%= f.file_field :doc %><br/>
 
         <%= f.submit "Сохранить" %>
     <% end %>
