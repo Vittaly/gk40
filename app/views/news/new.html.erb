@@ -3,9 +3,7 @@
 
 <div class="row">
   <div>
-    <%= form_for(@news) do |f| %>
-
-        <%= render 'shared/error_messages' %>
+    <%= form_for(@news) do |f| %>        
 
         <%= f.label :title, 'Заголовок' %>
         <%= f.text_field :title %><br/>

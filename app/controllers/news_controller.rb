@@ -1,8 +1,7 @@
 # -*- encoding : utf-8 -*-
 class NewsController < ApplicationController
 	def index
-		@last_3news = News.last(3)
-		@news = News.paginate(page: params[:page])
+		@news = News.paginate(page: params[:page]).all(order: 'created_at DESC')
 	end
 	def show
 		@news = News.find params[:id]

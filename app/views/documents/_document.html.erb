@@ -1,4 +1,4 @@
 <div>
 <%= link_to document.title, document_download_path(document)%>
-<%= link_to '<Удалить>', document_path(document),method: :delete, class: "del_link", confirm: "Подтвердите удаление документа ${document.title}"%> 
+<%= link_to '<Удалить>', document_path(document),method: :delete, class: "del_link", confirm: "Подтвердите удаление документа \"#{document.title}\""%> 
 </div>

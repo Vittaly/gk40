@@ -2,7 +2,7 @@
 class AdsController < ApplicationController
 	def index
 		#	@last_3news = News.last(3)
-		@news = News.paginate(page: params[:page])
+		@ads = Ad.paginate(page: params[:page]).all(order: 'created_at DESC')
 	end
 	def show
 		@ad = Ad.find params[:id]

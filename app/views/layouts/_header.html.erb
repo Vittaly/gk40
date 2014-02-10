@@ -17,8 +17,11 @@
                    	<li><%= link_to "Выход", signout_path, method: "delete" %></li>
                    	</ul>
                    <% else %>
+				    <li><%= link_to "Новости", news_index_path %></li>
+					<li><%= link_to "Объявления", ads_path %></li>
                    	<li><%= link_to "Вход", signin_path %></li>
                    <% end %>                  
                </ul>
 			   </nav>
+			   <%= render 'shared/error_messages' %>
        </header>
