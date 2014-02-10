@@ -1,37 +1,34 @@
 # -*- encoding : utf-8 -*-
 Gk40::Application.routes.draw do
 
-
-
-  
-  get "users/index"
-  get "users/show"
-  get "users/new"
-  get "users/edit"
-  get "users/update"
-  #get "users/destroy"
+  get 'users/index'
+  get 'users/show'
+  get 'users/new'
+  get 'users/edit'
+  get 'users/update'
+  # get "users/destroy"
 
   resources :users
   resources :sessions, only: [:new, :create]
   resources :news
-  get "news/show"
-  get "news/create"
-  get "news/new"
-  get "news/edit"
-  #get "news/destroy"
-  
+  get 'news/show'
+  get 'news/create'
+  get 'news/new'
+  get 'news/edit'
+  # get "news/destroy"
+
   resources :monthly_readings, only: [:edit, :update]
-  resources :ads, only:[:new, :create, :edit, :update, :show, :index] 
-  get "documents/:id/download", to: "documents#download", as: :document_download
+  resources :ads, only: [:new, :create, :edit, :update, :show, :index]
+  get 'documents/:id/download', to: 'documents#download', as: :document_download
   resources :documents
-  resources :apartments, only:[:index] 
+  resources :apartments, only: [:index]
   match '/help', to: 'static_pages#help'
   match '/contact', to: 'static_pages#contact'
   match '/about', to: 'static_pages#about'
-  match '/signup',  to: 'users#new'  
+  match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy' #, via: :delete
-  
+  match '/signout', to: 'sessions#destroy' # , via: :delete
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -81,7 +78,7 @@ Gk40::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'static_pages#home'
+   root to: 'static_pages#home'
 
   # See how all your routes lay out with "rake routes"
 

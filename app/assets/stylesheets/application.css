@@ -71,3 +71,5 @@ nav ul a:hover {
 color:#111111; /* Цвет Текста при наведении мышки */
 background:#eeeeee; /* Цвет фона при наведении мышки */
 }
+
+a.del_link {font-size:smaller; color: red;}

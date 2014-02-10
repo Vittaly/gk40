@@ -17,7 +17,7 @@ class NewsController < ApplicationController
 			flash[:success] = 'Новость сохранена успешна!'
 			redirect_to @news
 		else
-			flash.now[:error] = @news.errors.full_messages.to_sentence 
+			flash.now[:error] = @news.errors.full_messages.to_sentence
 			render 'new'
 		end
 	end

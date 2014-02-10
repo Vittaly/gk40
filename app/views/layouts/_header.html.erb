@@ -3,16 +3,16 @@
          	<nav>
          		<ul>
          			<li><%= link_to "Домой",    root_path %></li>
-                  <li><%= link_to "Помощь",  help_path %></li>
+                  <!--<li><%= link_to "Помощь",  help_path %></li>-->
                   
                    <% if signed_in? %>
-				   <% if current_user.role == "ADMIN" %>
+				   <% if current_user.isAdmin? %>
                    	<li><%= link_to "Список квартир", apartments_path %></li>
                    	<li><%= link_to "Добавить новость", new_news_path %></li>
                    	<li><%= link_to "Добавить объявление", new_ad_path %></li>
 					<% end %>
                    	<li><%= link_to "Профиль", current_user %></li>
-                   	<li><%= link_to "Настройки", '#' %></li>
+                   	<!--<li><%= link_to "Настройки", '#' %></li>-->
                    	<li><%= link_to "Документы", documents_path %></li>
                    	<li><%= link_to "Выход", signout_path, method: "delete" %></li>
                    	</ul>

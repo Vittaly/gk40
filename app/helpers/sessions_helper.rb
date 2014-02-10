@@ -14,17 +14,17 @@ module SessionsHelper
 
   def current_user
   	  flash.now[:notice] = session[:expires_at]
-	  debugger
+	  #debugger
   	  if (!session[:expires_at]) || session[:expires_at] < Time.now then
   	  	  sign_out
 		  return nil
   	  else
   	  	  session[:expires_at] = 1.minutes.from_now
-  	  end  	  	  
+  	  end
   	  @current_user ||= User.find session[:current_user_id] if session[:current_user_id]
-  	  return @current_user
+  	  @current_user
   end
-  
+
   def sign_out
     self.current_user = nil
     session[:current_user_id] = nil

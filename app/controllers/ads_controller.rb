@@ -17,7 +17,7 @@ class AdsController < ApplicationController
 			flash[:success] = 'Объявление сохранено успешно!'
 			redirect_to @ad
 		else
-			flash.now[:error] = @ad.errors.full_messages.to_sentence 
+			flash.now[:error] = @ad.errors.full_messages.to_sentence
 			render 'new'
 		end
 	end
