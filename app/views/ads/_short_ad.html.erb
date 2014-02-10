@@ -1,0 +1,5 @@
+﻿<div class="one_short_ad">
+<%= image_tag short_ad.picture.url(:thumb) %>
+<%=link_to short_ad.title, short_ad%>
+<p><%="Добавлено #{short_ad.created_at.to_s(:ru_datetime)}"%></p>
+</div>

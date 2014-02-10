@@ -1,0 +1,8 @@
+﻿<% provide(:title, 'Объявления') %>
+<h1>Все объявления</h1>
+
+<%= will_paginate %>
+<ul>
+  <%= render :partial => "ad", :collection => @ads%>  
+</ul>
+<%= will_paginate %>

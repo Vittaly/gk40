@@ -1,0 +1,11 @@
+<li class="news_item">
+	<div >
+	<h3>
+		<%= ad.title%>
+    </h3>	
+	
+<%= image_tag ad.picture.url(:medium) %> 
+	<p>Добавлено <%= ad.created_at.to_s(:ru_datetime) %></p>
+	<p><%= simple_format(ad.content) %></p>
+	</div>
+</li>
