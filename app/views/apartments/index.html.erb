@@ -1,4 +1,6 @@
 <h1>Квартиры кооператива</h1>
 <ul>
+<%= will_paginate %>
 <%=render :partial => "apartments/apartment", :collection => @apartments%>
+<%= will_paginate %>
 </ul>

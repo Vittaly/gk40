@@ -2,6 +2,6 @@
 class ApartmentsController < ApplicationController
 	def index
 		redirect_to signin_path unless signed_in?
-		@apartments = Apartment.all :order => "apartment_number ASC"
+		@apartments = Apartment.paginate(page: params[:page]).all(:order => "apartment_number ASC")
 	end
 end
