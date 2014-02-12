@@ -28,7 +28,7 @@ class DocumentsController < ApplicationController
 		end
 	end
 	def destroy
-		check_admin
+		return if !check_admin
 		@doc = Document.find(params[:id])
 		if @doc.destroy
 			flash[:success] = 'Документ '+@doc.title+ 'удален.'
