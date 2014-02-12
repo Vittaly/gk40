@@ -2,8 +2,8 @@
 <h1>Документы</h1>
 
 <%= will_paginate %>
-<%= link_to("Добавить документ", new_document_path, class: "new_link") if current_user && current_user.isAdmin?%>
 <ul>
+  <%= render(:partial => "document", locals: {document: nil}) if current_user && current_user.isAdmin?%> 
   <%= render :partial => "document", :collection => @documents %>  
 </ul>
 <%= will_paginate %>

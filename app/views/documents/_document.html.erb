@@ -1,4 +1,8 @@
 <div>
+<%if document != nil then%>
 <%= link_to document.title, document_download_path(document)%>
 <%= link_to( '<Удалить>', document_path(document),method: :delete, class: "del_link", confirm: "Подтвердите удаление документа \"#{document.title}\"") if current_user && current_user.isAdmin?%> 
+<%else%>
+<%= link_to "<Добавить документ>", new_document_path%>
+<%end%>
 </div>

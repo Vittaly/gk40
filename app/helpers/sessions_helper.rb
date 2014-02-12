@@ -13,7 +13,7 @@ module SessionsHelper
   end
 
   def current_user
-  	  flash.now[:notice] = session[:expires_at]
+  	  #flash.now[:notice] = session[:expires_at]
 	  #debugger
   	  if (!session[:expires_at]) || session[:expires_at] < Time.now then
   	  	  sign_out
