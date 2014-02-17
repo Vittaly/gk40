@@ -1,6 +1,7 @@
 ﻿ <li>
-<%= meterage.counter_type.name %>
+
 	<%= f.fields_for meterage do |mf| %>
+			<%= mf.label meterage.counter_type.name %>
 			<%= mf.text_field :value %>
 			<%= mf.text_field :value2 %>
 		<% end %>

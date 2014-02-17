@@ -6,4 +6,5 @@ class Meterage < ActiveRecord::Base
     has_one    :next, class_name: 'Meterage', foreign_key: 'prev_id'
 	has_one :apartment, through: :apartment_counter
 	has_one :counter_type, through: :apartment_counter
+	#accepts_nested_attributes_for :counter_type
 end

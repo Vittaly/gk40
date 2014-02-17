@@ -3,11 +3,10 @@
 		<%= meterage.counter_type.name %>
 	</td>
 	<td>
-		<%=  if meterage.prev then "#{meterage.prev.value}" end%>
+		<%=  if meterage.prev then if meterage.prev.value2==nil then "#{meterage.prev.value}" else "#{meterage.prev.value}/#{meterage.prev.value2}" end end%>
+		
 		</td>
 	<td>
-		<%= "#{meterage.value}" %>
+		<%= if meterage.value2==nil then "#{meterage.value}" else "#{meterage.value}/#{meterage.value2}" end %>
 	</td>
 </tr>
-<!--<%# meterage.prev ? "Начало периода: #{meterage.prev.value} Конец периода: #{meterage.value}" : "Конец периода: #{meterage.value}" %>
-<%# "Показатель 2: #{meterage.value2}" if meterage.value2?%>-->

@@ -1,20 +1,28 @@
 ﻿<% provide(:title, 'Значения показателей счетчиков за ' + @monthly_reading.month_as_text) %>
-<div class="row">
-  <div>
+<h1>
+<%= l @monthly_reading.month, format: :meterage_date %>
+</h1>
     <%= form_for(@monthly_reading) do |f| %>
 
-        <%= render 'shared/error_messages' %>
-	 
+        <!--<%= render 'shared/error_messages' %>-->
+	 <table border = "1">
+	 <tr>
+	 <td>Счетчик</td>
+	 <td>Значение (T1/T2)</td>
+	 </tr>
 	<%= f.fields_for :meterages do |mf| %>
-	<li>	<%= mf.label "Показатель 1 (Т1)" %>
-			<%= mf.text_field :value %>
-			<%= mf.label "Показатель 2 (Т2)" %>
-			<%= mf.text_field :value2 %>
-	</li>
+		<tr>
+	<td>
+	<%=  label_tag(:counter_name, mf.object.counter_type.name) %>
+	</td>
+	<td>
+			<%= mf.text_field :value, class: 'meterage_input' %>
+			<%= "/"%>
+			<%= mf.text_field :value2, class: 'meterage_input' %>
+			</td>
+</tr>	
 		<% end %>
-
+</table>
 
         <%= f.submit "Сохранить" %>
     <% end %>
-  </div>
-</div>
