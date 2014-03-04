@@ -15,7 +15,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'paperclip'
 gem 'will_paginate'
 gem 'russian', '~> 0.6.0'
-
+gem 'thin'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -49,7 +49,7 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
-
+ gem 'capistrano'
+ gem 'capistrano-rails'
 # To use debugger
 # gem 'debugger'
