@@ -5,7 +5,7 @@ if RUBY_VERSION =~ /1.9/
   Encoding.default_internal = Encoding::UTF_8
 end
 
-gem 'rails', '3.2.13'
+gem 'rails', '3.2.17'
 #gem 'bootstrap-sass'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
